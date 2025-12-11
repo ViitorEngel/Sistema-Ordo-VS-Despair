@@ -1,0 +1,595 @@
+<html>
+<head>
+   <meta charset="UTF-8">
+   <style>
+
+      @font-face {
+         font-family: 'Custom1';
+         src: url("Old Horror Films 1-0.ttf") format("truetype");
+      }
+
+      body {
+         background-color: black;   /* Fundo preto */
+         color: white;              /* Texto branco */
+         font-family: "Times New Roman", serif;
+         padding: 80px;             /* Margem interna ao redor de todo o conteúdo */
+      }
+
+      h1, h2, h3, h4, h5 {
+         font-family: 'Custom1';
+         margin-left: -40px !important;
+      }
+
+      table {
+         width: 100%;
+         border-collapse: collapse; /* Faz as bordas se unirem */
+      }
+      table, th, td {
+         border: 1px solid white; /* Linhas brancas */
+      }
+      th, td {
+         padding: 10px; /* Espaço interno para ficar bonito */
+         color: white;  /* Texto branco */
+      }
+
+
+      ul li > h1,
+      ul li > h2,
+      ul li > h3,
+      ul li > h4,
+      ul li > h5,
+      ul li > h6{ 
+      margin-left: -40px !important;  /* puxa pra esquerda */
+      padding-left: 0 !important;
+      }
+      /* Zera o recuo de <ul> e <ol> que contêm headings */
+      ul:has(h1), ul:has(h2), ul:has(h3), ul:has(h4), ul:has(h5), ul:has(h6),
+      ol:has(h1), ol:has(h2), ol:has(h3), ol:has(h4), ol:has(h5), ol:has(h6) {
+         padding-left: 0 !important;
+         margin-left: 0 !important;
+         list-style: none !important;
+      }
+
+      /* E zera o recuo dos <li> que contêm headings */
+      li:has(> h1), li:has(> h2), li:has(> h3), li:has(> h4), li:has(> h5), li:has(> h6) {
+         padding-left: 0 !important;
+         margin-left: 0 !important;
+         list-style-type: none !important;
+      }
+      
+
+
+      #content {
+         margin-right: 260px; /* sidebar tem 220px + padding = ~240 */
+      }
+
+       #sidebar {
+         position: fixed;          /* Fixa na lateral */
+         right: 0;
+         top: 0;
+         width: 220px;
+         height: 100%;
+         background: #000000;         /* Fundo escuro */
+         padding: 20px;
+         box-sizing: border-box;
+         overflow-y: auto;         /* Caso o menu fique grande */
+      }
+      #sidebar a {
+         font-family: "Custom1";
+        color: white;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+      #sidebar a:hover {
+        text-decoration: underline;
+      }
+
+   </style>
+</head>
+
+<body>
+
+
+<div id="sidebar">
+    <a href="#o-que-vtnc">O QUE É VTNC?</a>
+    <a href="#do-que-vou-precisar">DO QUE VOU PRECISAR?</a>
+    <a href="#testes-e-abordagens">TESTES E ABORDAGENS</a>
+    <a href="#combate">COMBATE</a>
+    <a href="#investigacao-e-percepcao">INVESTIGAÇÃO E PERCEPÇÃO</a>
+    <a href="#criacao-de-personagens">CRIAÇÃO DE PERSONAGENS</a>
+    <a href="#rituais">RITUAIS</a>
+    <a href="#equipamento">EQUIPAMENTOS</a>
+    <a href="#lesoes">LESÕES</a>
+    <a href="sheet.pdf" target="_blank" download style="color:white; padding:10px; border:1px solid white;">Baixar Ficha</a>
+    <a href="index.html" style="color:white; padding:10px; border:1px solid white;">Voltar</a>
+    <br>
+    <img src="logo.png" alt="Logo" width="150">
+    Este jogo é Iluminado, construído com o sistema LUMEN de Spencer Campbell de GilaRPGs. Este jogo não é afiliado a Gila RPGs.
+ 
+</div>
+
+<div id="content">
+
+<article class="markdown-body">
+<h1>VAMPIROS, TRETAS NEFASTAS E CAPIROTAGENS</h1>
+<h2 class="atx" id="o-que-e-vtnc">O que é VTNC?</h2>
+<h3 class="atx" id="vai-tomar-no-">VAI TOMAR NO ...</h3>
+<p>Não, tô brincando.
+VTNC é um sistema de RPG de mesa feito para o cenário "Ordo X Despair", do GM Prelorder.
+Começando pelo começo, um RPG de mesa é um jogo em que os jogadores interpretam personagens em um mundo imaginário (nesse caso, violento e amaldiçoado) controlado pelo "GM", que tem como incumbência gerenciar os adversários, elementos do cenário e narrar uma história, improvisada ou não.
+Este jogo se passa em um contexto contemporâneo, e tem o foco em terror, humor, investigação e intriga, mantendo combates rápidos e catárticos.
+Esse é um jogo altamente experimental, e apesar de tentar manter a coesão e o vocabulário, não é um jogo pensado para quem nunca jogou RPG antes.</p>
+<h3 class="atx" id="do-que-eu-vou-precisar">Do que eu vou precisar?</h3>
+<p>Para jogar este jogo, você irá precisar de apenas um punhado de dados de 6 lados (aqui referidos como "d6"), algumas cópias das fichas, papel, lápis, borracha e um bando de bitolados, sendo que um deles  (o em estágio mais avançado de coringamento) será o mestre, ou "GM".</p>
+<h2 class="atx" id="regras">Regras</h2>
+<h3 class="atx" id="testes-e-abordagens">Testes e abordagens</h3>
+<p>Sempre que um jogador quiser realizar alguma atividade que possa ter consequências negativas em caso de falha, ele decide, dentre as opções, qual par de características definirão a sua abordagem à tarefa:</p>
+<ul>
+<li>Brutalidade e violência</li>
+<li>Agilidade e precisão</li>
+<li>Atenção e raciocínio
+<em>Obs: Cada par de palavras define um tipo de abordagem. Ou seja, "brutalidade e violência" são uma abordagem só, e não duas abordagens diferentes.</em></li>
+</ul>
+<p>Para cada uma das abordagens, o jogador possui em sua ficha um valor, chamado de "pool", que determina o quão habilidoso o personagem é em realizar atividades com aquela abordagem. O teste é realizado rolando a quantidade de d6 especificados na pool, escolhendo o maior valor, e comparando-o à tabela abaixo:</p>
+<ul>
+<li>1 a 2: A ação falhou, e há uma consequência negativa diretamente causada pela falha, piorando a situação.</li>
+<li>3: A ação falhou, e há uma complicação.</li>
+<li>4: A ação falhou, mas não há nenhuma complicação ou consequência negativa.</li>
+<li>5: A ação deu certo, mas á uma complicação.</li>
+<li>6: A ação deu certo, e não há nenhuma consequência negativa ou complicação.</li>
+</ul>
+<p>As consequências negativas e complicações costumam ser definidas pelo mestre, afinal, ele é quem orienta os acontecimentos do universo no qual os personagens estão inseridos, apesar dos jogadores sempre poderem dar sugestões.
+Além disso, às vezes, o mestre pode exigir que um teste seja realizado com uma abordagem específica ou proibir o uso de uma abordagem em uma tarefa. Se esconder no escuro para não ser percebido, por exemplo, quase sempre irá exigir um teste de agilidade e precisão, enquanto conjurar um ritual complexo, atenção e raciocínio.</p>
+<p>Se ao realizar um teste, não importa o número de dados, ao menos dois deles terem como resultado "6", então há um acerto crítico. Ao se ter um acerto crítico, há uma consequência positiva diretamente causada pelo sucesso, melhorando a situação! Em caso de ataques (explicados na parte de combates) o dano causado é multiplicado por dois.</p>
+<p><em>Obs: Consequência negativa VS complicação: a diferença entre consequência negativa e complicação é que a complicação é um problema menor, enquanto a consequência negativa é algo realmente ruim. Por exemplo, os jogadores querem abrir uma porta (clássico), uma complicação poderia ser a porta fazer muito barulho alertando possíveis inimigos, uma consequência negativa poderia ser a chave ser quebrada na tentativa, impossibilitando a passagem por aquele caminho e forçando os jogadores e tomarem uma rota totalmente diferente.</em></p>
+<h4 class="atx" id="regra-do-1d6">Regra do 1d6</h4>
+<p>Inevitavelmente, existirão situações em um jogo de RPG que não possuem uma regra especificada.
+Sempre que aparecer uma situação como essa, e um valor numérico for realmente relevante, a resposta será 1d6 com algum modificador, que pode ou não ser determinado pelo GM... inclusive rodando outro 1d6.
+Quanto tempo vai demorar para terminar de fazer tal coisa? O número de turnos que der no 1d6.
+Caí da escada, quanto de dano eu tomo? O que der no 1d6.
+Quanto dano dá essa arma improvisada que eu criei? O número que der no 1d6-2.
+Quanto de dano dá eu me jogar desse carro em movimento? O número que der no 1d6+3.</p>
+<h3 class="atx" id="combate">Combate</h3>
+<p>Finalmente tá na hora de embarcar na porradaria insana.
+Os combates são rápidos, letais e sanguinolentos. Comumente, os combates são resolvidos em questão de poucos minutos, tensos e catárticos. 
+Mapas não são necessários, mas podem ajudar os jogadores a compreenderem melhor as cenas de combate. Nesse caso, não há a necessidade de grids. </p>
+<h4 class="atx" id="rounds-turnos-e-iniciativa">Rounds, turnos e iniciativa</h4>
+<p>O modo como a ordem de iniciativa funciona em VTNC é bem diferente da maioria dos sistemas maiores. No começo vai parecer confuso, mas eu vou te explicar com bastante paciência, como se você fosse bem burrinho, fica tranquilo.</p>
+<p>Antes de mais nada, vamos conceituar turno e round: um round é o conjunto de todos os turnos da mesa, um turno é o momento em que os jogadores ou o GM realizam suas ações.</p>
+<p>Primeiro, antes mesmo de começar o combate, o GM irá rolar, em segredo ou não, 1d6. Se o resultado for igual ou maior do que 3, ele começa com seu turno, senão, os jogadores começam com seus turnos.</p>
+<p>Quando o combate iniciar, todos os jogadores irão rolar iniciativa. Para isso, devem rolar 1d6 e anotar o valor, pois o o resultado do dado é o turno em que os jogadores irão jogar.
+Ou seja, se um jogador tira 4 no dado, quer dizer que ele sempre irá jogar no 4º turno, sem considerar, nessa contagem o turno do mestre. 
+Depois de todos os jogadores realizarem seus turnos, independentemente de o GM ter começado atacando ou não, tem-se concluído um round. O GM irá então realizar o seu turno, e então começarão os turnos dos players novamente, ainda na mesma sequência.</p>
+<p>Se dois ou mais jogadores tirarem o mesmo valor no dado, eles organizam entre si a ordem das jogadas, mas mesmo que eles realizem suas ações independentemente, um após o outro, continua-se contando como apenas um turno. Se os jogadores de um mesmo turno não resolverem na conversa quem vai jogar primeiro, o conflito pode ser resolvido com uma luta de MMA ou uma queda de braço, mas a segunda opção é recomendada apenas no caso da falta de protetores bucais.
+Turnos vagos, ou seja, sem nenhum jogador, são apenas ignorados.</p>
+<p>Isso acelera o início do combate, pois o GM não precisa perder tempo anotando, comparando e organizando as sequências. Ele pode apenas dizer "pessoal do X turno! são vocês!", e os jogadores daquele turno então realizam suas ações.</p>
+<p>Durante o seu turno, os jogadores podem se mover e realizar uma ação. O que é uma ação? Normalmente, atacar o inimigo ou realizar um ritual que especifique que pode ser realizado em combate, porém, pode ser praticamente qualquer outra atitude, ou conjunto de breves atitudes, que possa ser tomada dentro de um tempo de aproximadamente 2 segundos. E como você faz para saber se tudo pode ser feito dentro de dois segundos? Levante a bunda da cadeira e encene, se a atuação demorar mais do que isso, não dá pra fazer... ou tenha a decência de só usar o bom senso, sei lá. Você é burro?</p>
+<p>Os combates devem ser rápidos e traiçoeiros. Em um combate real, a habilidade de se adaptar às novas situações em pouco tempo é muito necessária, portanto, caso os turnos estejam demorando demais, o mestre pode determinar o uso de um timer com um tempo limite para que os jogadores pensem e declarem suas ações, sem contar as rolagens e cálculos necessários, que podem ser realizadas mesmo após a passagem do timer. O GM pode decidir se exibe ou não o timer aos jogadores, mas é recomendado que ele ao menos informe aos jogadores quando o timer começar a contar e quanto tempo eles têm.</p>
+<h4 class="atx" id="alcance-e-movimentacao">Alcance e movimentação</h4>
+<p>Não há a necessidade de grid, e as distâncias são relativas ao posicionamento do personagem e dos demais elementos da cena. Existem três níveis de alcance:</p>
+<ul>
+<li>Imediato: alcance corporal, no máximo um ou dois passos;</li>
+<li>Próximo: de um lado a outro de uma sala, uma pequena corridinha é o suficiente para cobrir o espaço;</li>
+<li>Longe: qualquer coisa mais distante do que "próximo" ou "imediato".
+Em cada movimentação, os jogadores podem se mover um nível de alcance para mais perto ou distante em relação aonde querem ir, seja um elemento do cenário, inimigo ou colega. Caso o jogador queira, pode abrir mão de sua ação para se movimentar duas vezes.</li>
+</ul>
+<h4 class="atx" id="ataques-dano-morte-e-recuperacao">Ataques, dano, morte e recuperação</h4>
+<p>Um ataque é qualquer atitude que tenha como objetivo causar dano a alguém. Normalmente, usar-se-á uma arma para tal, mas não necessariamente.
+Realizar um ataque é extremamente simples, você apenas faz um teste como qualquer outro, e se o teste for bem sucedido, aflige o dano da sua arma ao alvo. Observe, porém, que sempre que o teste vier acompanhado de uma complicação, o alvo que você está atacando pode realizar uma ação, como um contra-ataque, e uma movimentação.
+Caso o teste falhe e tenha uma consequência negativa, o GM poderá realizar ações e movimentações com quantos inimigos quiser ou então escolher qualquer outra consequência negativa (talvez você tenha acertado um colega de equipe?).
+Se um inimigo realiza o teste e como resultado vier uma complicação, o personagem tem direito a realizar somente uma ação, se for uma consequência negativa, o personagem tem direito a um turno completo, incluindo movimentação.</p>
+<p>Podem haver exceções, mas, geralmente, cada tipo de ataque está associado e uma abordagem:</p>
+<ul>
+<li>Ataques em distância imediata: brutalidade e violência.</li>
+<li>Ataques em distância próxima ou longe: agilidade e precisão.</li>
+<em>Obs: Podem existir exceções, desde que conversadas com o mestre. E se um personagem for atleta de esgrima? Talvez possa usar, para atacar com sabres e espadas, agilidade e precisão, por exemplo.</em></li>
+</ul>
+<p>Observe que um ataque sempre dura uma ação.</p>
+<p>Quando um personagem chega a zero de PV, ele deve jogar um dado. A depender do resultado:</p>
+<ul>
+<li>1 a 2: Personagem bateu as botas, faleceu, morreu, como queira chamar.</li>
+<li>3 a 4: Personagem ainda não morreu, mas irá morrer ao final do combate se ninguém fizer um teste bem sucedido de atenção e raciocínio para estabilizá-lo.</li>
+<li>5 a 6: o personagem sobreviveu e está com 1 de PV, mas está nocauteado até o fim do combate. 
+Além disso, o personagem deve rolar a tabela de lesões. Se está vivo por ter sido estabilizado por alguém, e o teste da estabilização tiver vindo acompanhado de uma complicação ou consequência negativa, deve rolar a tabela de lesões duas vezes.</li>
+<em>Obs: às vezes, o GM pode querer fazer ele mesmo o teste e não contar o resultado para os jogadores até que algum colega de equipe vá verificá-lo.</em>
+</ul>
+<p>Para recuperar a vida e alma perdidas, o personagem deve ficar pelo menos 8 horas descansando, e recuperará 1d6 de vida e 1d6 de alma. Para descansar, ele deve dormir ou então realizar alguma outra atividade que ele considere agradável. Não é possível descansar em locais perigosos e tensos, como em ambientes onde há a possibilidade de inimigos por perto.
+Mesmo que o jogador vá mal no dado de recuperação de vida, ele deverá recuperar ao menos 2 pontos de vida.</p>
+<h4 class="atx" id="turno-do-gm">Turno do GM</h4>
+<p>Após todos os jogadores, ocorre então o turno do GM. O turno do GM não é dedicado aos ataques dos inimigos, uma vez que estes são realizados durante os turnos dos jogadores, mas se nenhum jogador falhou nos testes, dando a oportunidade dos inimigos atacarem, o mestre pode fazê-lo nesse turno.
+O turno do GM serve para alterar totalmente a dinâmica do combate. Nele, o GM irá introduzir alguma outra variável no combate. Pode ser que alarmes comecem a soar chamando novos inimigos, a estrutura comece a desmoronar, o padrão de ataque dos adversários mude, um novo inimigo apareça, enfim... algo grande deve ocorrer.
+Observe que, em combates estratosfericamente longos (pouco recomendados para o tipo de narrativa de VTNC), o GM pode parar de adicionar novas coisas depois de 3 ou 4 rounds, até porque ninguém tem coelho pra tanta cartola.</p>
+<h3 class="atx" id="investigacao-e-percepcao">Investigação e percepção</h3>
+<p>Grande parte das intrigas da Despair Society e das investigações da Ordo Beatorum consiste em investigar provas, juntar os pontos e chegar em conclusões. 
+Ao longo das suas investigações, os personagens irão buscar por pistas, ou seja, elementos que os auxiliem a entender o que está acontecendo.
+Nunca, jamais, em hipótese alguma, as pistas estarão "escondidas" atrás de um teste. Se o jogador procurar no local certo, a pista será entregue, simples assim.</p>
+<p>Além disso, às vezes, podem estar acontecendo coisas ao redor dos personagens, e talvez eles nem sempre percebam, como ao estarem sendo seguidos, observados, etc...
+Nesse caso, o GM poderá realizar um teste de percepção passiva. Ele rodará 1d6, e esse será o valor que um personagem deverá ter na pool "atenção e raciocínio" para pressentir que há algo errado.</p>
+<h3 class="atx" id="criacao-de-personagens">Criação de personagens</h3>
+<p>Então está na hora de fazer o seu saco de pancad... digo, personagem.
+A criação é bem simples, apenas siga o passo a passo.</p>
+<h4 class="atx" id="passo-a-passo">Passo a passo</h4>
+<ul>
+<li>Você começa com 1 ponto em cada uma das pools, além de mais 2 pontos para distribuir como bem entender entre elas.</li>
+<li>Você começa com 7 pontos de vida e 3 de alma, além de mais 4 pontos para distribuir entre vida e alma como bem entender.</li>
+<li>Escolha 2 especializações</li>
+<li>Escolha 3 rituais iniciais</li>
+<li>Escolha seu equipamento inicial<ul>
+<li>Você começa com 1000 créditos.</li>
+<li>Todos começam com equipamentos básicos, como carteiras, celulares e vestimentas.</li>
+</ul>
+</li>
+<li>Escolha suas maldições iniciais<ul>
+<li>Você pode escolher quantas maldições quiser, entretanto, é recomendado não escolher mais do que duas. Além disso, o mestre pode determinar que todos os jogadores comecem com alguma maldição. No caso de uma partida de Ordo Beatorum, por exemplo, é provável que todos os jogadores comecem ou recebam a maldição "Testemunho" ao longo do jogo. A mesma coisa para a maldição "Vampirismo" em partidas da perspectiva de Despair Society.</li>
+</ul>
+</li>
+</ul>
+<h4 class="atx" id="especializacoes">Especializações</h4>
+<ul>
+<li>Armas à distância: Role 1 dado a mais em testes com armas de alcance "próximo". Não se aplica a explosivos.</li>
+<li>Armas corporais: Role 1 dado a mais em testes com de alcance "imediato". Não se aplica a explosivos.</li>
+<li>Armas de precisão: Role 1 dado a mais em testes com armas de alcance "longe". Não se aplica a explosivos.</li>
+<li>Explosivos: Role 1 dado a mais em testes com explosivos.</li>
+<li>Médico de combate: Você sabe como realizar manobras de primeiros socorros, e pode curar 4 pontos de vida de aliados se bem sucedido em um teste para tal, mesmo durante combate, cada aliado só pode receber uma cura por dia. Se estiver estabilizando algum aliado caído, pode rodar 1 dado a mais.</li>
+<li>Ocultista: Comece com 2 rituais a mais, e pode ter 4 rituais preparados para uso ao invés de 2;</li>
+<li>Velocista: Você pode realizar duas movimentações em seu turno, sem perder a ação;</li>
+<li>Pilotagem: Role 1 dado a mais em testes que envolvam pilotar veículos.</li>
+<li>Conhecimento: Escolha uma área do conhecimento (engenharia, direito, biologia, história, etc...), role um dado a mais em testes que envolvam tal conhecimento. Esses conhecimentos não devem ter relação direta ao submundo.</li>
+<li>Conhecimento do submundo: Você é versado nos conhecimentos do submundo. Role um dado a mais em testes que envolvam tal conhecimento.</li>
+</ul>
+<h4 class="atx" id="maldicoes">Maldições</h4>
+<ul>
+<li>Vampirismo:<ul>
+<li>Você é um vampiro!</li>
+<li>Receba +2 para distribuir entre as pools</li>
+<li>Receba +4 para distribuir entre vida e alma</li>
+<li>Após passar um dia sem consumir sangue humano fresco, todas as suas pools, vida e alma máximas são cortadas pela metade (nunca ficando menor do que 1). Após 7 dias, você morre.</li>
+</ul>
+</li>
+<li>Testemunho:<ul>
+<li>Você passou pelo Ritual do Testemunho e agora é agente da Ordo Beatorum! (se fodeu).</li>
+<li>Receba +1 para distribuir entre as pools
+<em>OBS: Mesmo com maldições, ao se criar um personagem, o valor máximo de uma pool permanece sendo 3.</em></li>
+</ul>
+</li>
+</ul>
+<p>Ter ambas as maldições não costuma dar muito certo. O pessoal da Ordem não vai muito com a cara de vampiros, e o pessoal da Despair Society definitivamente não aceita membros com a Maldição do Testemunho. Se você for um "agente duplo" (por favor, converse com o seu GM antes), esconda isso MUITO BEM.
+Além disso, as maldições interagem uma com a outra, gerando conflitos, nesse caso, ignore os efeitos descritos acima e adote os seguintes:</p>
+<ul>
+<li>Receba +1 para distribuir entre as pools</li>
+<li>Receba +2 para distribuir entre vida e alma</li>
+<li>Após passar um dia sem consumir sangue humano fresco, todas as suas pools, vida e alma máximas são cortadas pela metade (nunca ficando menor do que 1) e permanecem assim por mais 7 dias. Se não consumir sangue humano fresco nesse meio tempo, ao final do 7º dia, o personagem morre.</li>
+</ul>
+<h3 class="atx" id="rituais">Rituais</h3>
+<p>Independentemente de quantos rituais um jogador conheça, ele só pode permanecer com 2 rituais prontos para uso, jamais podendo alterar esses rituais durante o combate. Jogadores com a especialização "Ocultista" podem ter 4 rituais prontos para uso. Pode-se mudar quais rituais estão prontos para uso durante os descansos.
+Todos os rituais possuem o mesmo custo, que é de 1 ponto de alma para ser conjurado. Para conjurar um ritual, realiza-se um teste de atenção e raciocínio, sendo que a alma e os materiais são gastos mesmo em caso de falha. Todo ritual exige que pentagramas e símbolos sejam desenhados com algum material em alguma superfície. Normalmente usa-se giz, mas qualquer outra coisa serve.
+Para poder ser utilizado em combate, um ritual deve especificar tal uso em sua descrição, durando uma ação para ser conjurado. Alguns rituais exigem "concentração" para serem conjurados, isso significa que, durante a conjuração, o personagem deve ficar focando apenas nisso, sem fazer mais nada, nem mesmo se mover (exceto se especificado o oposto) e não pode tomar dano, ou o efeito do ritual acaba. </p>
+<ul>
+<li><strong>Abafamento acústico</strong>: Qualquer som em um raio de 50m é totalmente abafado, gerando no ambiente um absoluto silêncio. Exige concentração e pode ser conjurado durante combate.</li>
+<li><strong>Bússola de alma</strong>: Pegue um objeto qualquer e realize este ritual tendo ele como alvo. À partir de hoje, enquanto esse objeto não for destruído, você sempre terá uma noção de para qual direção ele está.</li>
+<li><strong>Correntes do Além</strong>: O conjurador materializa correntes resistentes que prendem um alvo ao solo. A única forma de se desvencilhar é tendo sucesso em um teste com a abordagem brutalidade e violência. Exige concentração para ser conjurado, e pode ser conjurado em combate.</li>
+<li><strong>Despertar essência interior</strong>: O conjurador realiza esse ritual tendo como alvo um personagem aquiescente, despertando a sua verdadeira essência, seja ela destruidora, tática ou veloz. As próximas 3 ações desse alvo terão um bônus de mais um dado nas rolagens de uma pool específica, escolhida pelo conjurador. Pode ser conjurada em combate.</li>
+<li><strong>Detectar rituais</strong>: O conjurador consegue sentir alterações nos fluxos de alma nas proximidades. Assim, consegue determinar se há algum ritual ativo dentro de um raio de cerca de 1Km. Pode ser conjurado em combate.</li>
+<li><strong>Disfarce</strong>: O conjurador adquire a aparência e voz de algum outro indivíduo. Toda vez que interagir com algum outro personagem ou npc que não saiba de seu disfarce, deve realizar um teste com a abordagem atenção e raciocínio. Se falhar, seu disfarce cai.</li>
+<li><strong>Fogo fátuo</strong>: O conjurador consegue conjurar pequenas labaredas de fogo. Pode ser conjurado em combate.</li>
+<li><strong>Invisibilidade</strong>: O conjurador fica invisível. Exige concentração, apesar de não impedir a movimentação. Pode ser conjurado durante o combate.</li>
+<li><strong>Intangibilidade</strong>: O conjurador se torna totalmente intangível até o seu próximo turno, ou aproximadamente 1 minuto caso fora de combate. Isso significa que balas, fogo, armas brancas, etc... não o atingem, além disso, ele pode passar por paredes e demais sólidos. Se o efeito do ritual acabar enquanto o jogador está dentro de um sólido, a região inserida nesse sólido é absolutamente destruída, o que, por vezes, pode levar à morte. Exige concentração, mas permite movimentação. Pode ser conjurado em combate.</li>
+<li><strong>Ligamento sanguíneo</strong>: O conjurador liga dois aliados aquiescentes, podendo ele ser um deles ou não. Por 4 rounds, ou 20 segundos se fora de um combate, todo o dano é dividido igualmente entre os dois personagens. Se o valor da divisão não for inteiro, arredonda-se para cima. Pode ser conjurado em combate. Todos os envolvidos perdem um ponto de alma para realizá-lo.</li>
+<li><strong>Manipulação psíquica</strong>: O conjurador tentará plantar uma ideia na cabeça de um alvo. Se o alvo não for bem sucedido em um teste de atenção e raciocínio, ele acreditará. Pode ser conjurado em combates.</li>
+<li><strong>Marca no tempo</strong>: O conjurador realiza um registro no tempo de sua vida e posicionamento. A qualquer momento, inclusive fora de seu turno, durante os próximos 3 rounds em combate ou pelos próximos 15 segundos caso fora dele, uma única vez, volta a ter a mesma quantidade de vida e a estar no mesmo local em que realizou o registro, mas apenas for bem sucedido em um teste com a abordagem atenção e raciocínio. Observe que itens gastos ou destruídos no processo não são recuperados. Pode ser utilizado em combate.</li>
+<li><strong>Pacto de sangue</strong>: Dois indivíduos aquiescentes, sejam personagens ou NPCs, fazem uma promessa enquanto conjuram este ritual. Se a promessa for quebrada, aquele que a quebrou morre. Apenas um dos envolvidos precisa realizar o ritual, mas ambos perdem um ponto de alma para realizá-lo.</li>
+<li><strong>Proteção espiritual</strong>: O conjurador recebe auxílio de forças sobrenaturais que o defendem de ataques. Até o final do combate, recebe um bônus de mais 1 de armadura. Pode, também, ser conjurada em outro personagem aquiescente. Pode ser conjurada em combates.</li>
+<li><strong>Raio de alma</strong>: Um raio formado por pura energia vital é emitido pelo conjurador. Ao atingir um alvo, este toma 6 de dano. Além do teste para ser conjurado, exige-se um teste de agilidade e precisão para acertar o alvo. Pode ser conjurado em combate. O alcance do raio é "longe".</li>
+<li><strong>Telecinesia</strong>: O conjurador consegue levitar e manipular no ar um objeto não muito pesado (até uns 10Kg). Exige concentração, pode ser conjurado em combate. Se for arremessar algo em alguém, rode 1d6 para verificar o dano. Se o objeto arremessado for uma arma branca, então o dano causado é o especificado pela arma.</li>
+<li><strong>Telepatia</strong>: O conjurador liga até 10 personagens aquiescentes em um canal telepático em que tudo que é pensado por cada um deles é passado a todos os outros. Pode ser conjurado em combate. Todos os envolvidos perdem um ponto de alma para conjurá-lo. <em>Obs: é literalmente TUDO que se passa na cabeça dos personagens...</em></li>
+<li><strong>Véu da verdade</strong>: O conjurador escolhe um alvo, ao longo dos próximos 10 minutos, você sempre saberá quando o alvo fala a verdade ou mente.</li>
+<li><strong>Visão espectral</strong>: O conjurador, ao realizar esse ritual, consegue ver através de paredes.</li>
+<em>OBS: Tem alguma ideia mirabolante que não está aqui? Fale com o seu GM. Por experiência própria, sempre dá pra negociar uma gambiarra nas mecânicas em troca de uma lata de energético bem gelada.</em>
+</ul>
+<h3 class="atx" id="equipamento">Equipamento</h3>
+<p>Cada jogador só pode carregar consigo, no máximo, 10 itens das tabelas abaixo. Itens com a observação "agrupável" podem formar grupos de até 5 unidades contando como apenas um.</p>
+<h4 class="atx" id="armaduras">Armaduras</h4>
+<p>Ao receber dano, desconte do dano dado o valor em "defesa".</p>
+<table>
+<thead>
+<tr>
+<th>Armadura</th>
+<th>Defesa</th>
+<th>Custo</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Máscara de gás</td>
+<td>0</td>
+<td>700</td>
+<td>Protege contra gases tóxicos</td>
+</tr>
+<tr>
+<td>Óculos visão térmica</td>
+<td>0</td>
+<td>700</td>
+<td>Permite ver inimigos dentro de nuvens de fumaça ou em locais muito escuros</td>
+</tr>
+<tr>
+<td>Capacete esportivo</td>
+<td>1</td>
+<td>400</td>
+<td></td>
+</tr>
+<tr>
+<td>Colete tático</td>
+<td>1</td>
+<td>400</td>
+<td></td>
+</tr>
+<tr>
+<td>Colete de Kevlar</td>
+<td>2</td>
+<td>800</td>
+<td></td>
+</tr>
+<tr>
+<td>Capacete tático</td>
+<td>2</td>
+<td>800</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 class="atx" id="armas">Armas</h4>
+<table>
+<thead>
+<tr>
+<th>Arma</th>
+<th>Dano</th>
+<th>Alcance</th>
+<th>Custo</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Escopeta cano serrado</td>
+<td>5</td>
+<td>Próximo</td>
+<td>800</td>
+<td>Precisa ser recarregada a cada dois disparos, o que consome um turno.</td>
+</tr>
+<tr>
+<td>Pistola 9mm</td>
+<td>3</td>
+<td>Próximo</td>
+<td>600</td>
+<td></td>
+</tr>
+<tr>
+<td>Revólver velho</td>
+<td>2</td>
+<td>Próximo</td>
+<td>400</td>
+<td></td>
+</tr>
+<tr>
+<td>Arminha de água</td>
+<td>0</td>
+<td>Próximo</td>
+<td>700</td>
+<td>Pode ser carregada com água benta, nesse caso, dá 6 de dano contra criaturas sobrenaturais, exceto vampiros. A cada disparo, precisa ser recarregada, o que consome um turno.</td>
+</tr>
+<tr>
+<td>Lança chamas</td>
+<td>4</td>
+<td>Próximo</td>
+<td>960</td>
+<td>Permite projetar um jato contínuo de fogo, acertando até 3 inimigos em um só disparo. Faça um só teste para todos os adversário. Precisa ser recarregado a cada disparo.</td>
+</tr>
+<tr>
+<td>Submetralhadora</td>
+<td>3</td>
+<td>Próximo</td>
+<td>1200</td>
+<td>Devido a alta cadência, permite atacar até 2 inimigos em um turno. Faça um só teste para todos os adversários.</td>
+</tr>
+<tr>
+<td>Carabina de caça</td>
+<td>3</td>
+<td>Longe</td>
+<td>900</td>
+<td></td>
+</tr>
+<tr>
+<td>Rifle de precisão</td>
+<td>5</td>
+<td>Longe</td>
+<td>1500</td>
+<td></td>
+</tr>
+<tr>
+<td>Bastão de baseball</td>
+<td>4</td>
+<td>Imediato</td>
+<td>400</td>
+<td></td>
+</tr>
+<tr>
+<td>Pé de cabra</td>
+<td>3</td>
+<td>Imediato</td>
+<td>360</td>
+<td>Pode ser usado para arrombar portas e janelas, nesse caso, jogue +1 dado no teste.</td>
+</tr>
+<tr>
+<td>Canivete</td>
+<td>2</td>
+<td>Imediato</td>
+<td>200</td>
+<td></td>
+</tr>
+<tr>
+<td>Machado</td>
+<td>6</td>
+<td>Imediato</td>
+<td>600</td>
+<td></td>
+</tr>
+<tr>
+<td>Motosserra</td>
+<td>7</td>
+<td>Imediato</td>
+<td>700</td>
+<td></td>
+</tr>
+<tr>
+<td>Facão</td>
+<td>5</td>
+<td>Imediato</td>
+<td>500</td>
+<td></td>
+</tr>
+<tr>
+<td>Coquetel molotov</td>
+<td>3</td>
+<td>Próximo</td>
+<td>600/un</td>
+<td>Explosivo. Cria uma círculo de fogo de aproximadamente 3m de diâmetro. Todos que entrarem nessa área tomam 3 de dano por turno enquanto estiverem nela. O efeito dura 5 turnos.</td>
+</tr>
+<tr>
+<td>Granada de pregos improvisada</td>
+<td>3</td>
+<td>Próximo</td>
+<td>480/un</td>
+<td>Explosivo. O dano é dado a todos em alcance imediato</td>
+</tr>
+<tr>
+<td>Adesivo plástico</td>
+<td>6</td>
+<td>Próximo</td>
+<td>720/un</td>
+<td>Explosivo. Pode ser fixado em superfícies, exigindo alcance imediato para fixação. Uma vez fixado, pode ser acionado à qualquer distância e a qualquer momento. O dano é dado a todos em alcance próximo do explosivo no momento da explosão.</td>
+</tr>
+<tr>
+<td>Granada de gás</td>
+<td>3</td>
+<td>Próximo</td>
+<td>480/un</td>
+<td>Explosivo. Forma uma nuvem de gás que impede a visão e dá dano ao longo do tempo a todos que não estiverem usando máscaras. Os efeitos duram 5 turnos.</td>
+</tr>
+<tr>
+<td>Granada de luz</td>
+<td>0</td>
+<td>Próximo</td>
+<td>240/un</td>
+<td>Explosivo. Cega a todos que estiverem na mesma sala que ela por um turno.</td>
+</tr>
+<tr>
+</tbody>
+</table>
+<em>Obs: Não se contam munições, isso é chato pra cacete. Contam-se munições apenas no caso de balas de prata.</em>
+<h4 class="atx" id="itens-genericos">Itens genéricos</h4>
+<table>
+<thead>
+<tr>
+<th>Itens</th>
+<th>Custo</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Estaca de madeira</td>
+<td>150</td>
+<td>Use como uma arma, usando apenas um dado para atacar. Se acertar um vampiro, divida a vida pela metade. Agrupável.</td>
+</tr>
+<tr>
+<td>Giz</td>
+<td>15</td>
+<td>Geralmente usado para desenhar no chão os rituais a serem conjurados. Agrupável.</td>
+</tr>
+<tr>
+<td>Bala de prata</td>
+<td>200/unidade</td>
+<td>Dobro de dano da arma contra inimigos que não sejam vampiros ou humanos. Agrupável.</td>
+</tr>
+<tr>
+<td>Lanterna</td>
+<td>150</td>
+<td>Ao ligá-la em um local que, sem ela, seria escuro, você tem +1 dado em qualquer teste que for fazer.</td>
+</tr>
+<tr>
+<td>Buzina</td>
+<td>15</td>
+<td>Faz um som alto pra caralho.</td>
+</tr>
+<tr>
+<td>Armadilha fotográfica</td>
+<td>200</td>
+<td>Uma pequena câmera que pode ser escondida. Sempre que ela detectar algum movimento, irá iniciar uma gravação que dura alguns segundos.</td>
+</tr>
+<tr>
+<td>Rádio criptografado</td>
+<td>200</td>
+<td>Um par de walkie-talkies criptografados que permite comunicação segura entre dois indivíduos que estejam até 10KM de distância um do outro.</td>
+</tr>
+<tr>
+<td>Kit cordas</td>
+<td>200</td>
+<td>Um kit com vários metros de corda, mosquetões e ganchos. Bom pra fetich... digo, fazer rapel e imobilizar oponentes.</td>
+</tr>
+<tr>
+<td>Sal grosso</td>
+<td>20/un</td>
+<td>Ao ser despejado no chão, cria linhas que criaturas sobrenaturais evitam passar a todo custo (exceto vampiros). Algumas criaturas, mais conscientes, podem ignorar essas barreiras. Além disso, qualquer criatura pode ignorá-la se encurralada e sem escapatória. Também é bom pra fazer um churrasco.</td>
+</tr>
+<tr>
+<td>Ervas ancestrais</td>
+<td>100/unidade</td>
+<td>Ao ter sua fumaça inalada, além de um barato sensacional, permite detectar presenças de espíritos e criaturas sobrenaturais ao redor. O pico do efeito é atingido após 20 minutos da inalação, e vai cessando aos poucos ao longo de 3 a 4 horas. Agrupável.</td>
+</tr>
+<tr>
+<td>Incenso</td>
+<td>5/unidade</td>
+<td>Dá um cheirinho bom... é, não tem muita função além disso. Tu achou que isso funcionava? Agrupável.</td>
+</tr>
+</tbody></table>
+<h3 class="atx" id="lesoes">Lesões</h3>
+<p>Ah, então a morte bateu na sua porta? E mesmo assim você escapou... legal, mas há consequências. Role 1d6 para determinar se o sua lesão será física, psicológica, ou ambas:</p>
+<ul>
+<li>1: role de novo</li>
+<li>2 a 3: física</li>
+<li>4 a 5: psicológica</li>
+<li>6: física e psicológica</li>
+</ul>
+<p>Se for física, role na tabela abaixo:</p>
+<ul>
+<li>1 a 2: Lesão no sistema muscular e esquelético: fraturas, rompimento de tendões, perda de movimentos, etc.... Você perde 1 na pool de brutalidade e violência permanentemente.</li>
+<li>2 a 3: Lesão no sistema nervoso central: concussão, avc, perda de memória, etc... Você perde 1 na pool de atenção e raciocínio permanentemente.</li>
+<li>3 a 4: Lesão no sistema nervoso periférico: rompimento parcial do cordão espinhal, hérnia de disco, etc... Você perde 1 na pool de agilidade e precisão permanentemente.</li>
+</ul>
+<p>Se for psicológica, role abaixo:</p>
+<ul>
+<li>1: PTSD: Em situações de estresse, como na presença de um inimigo notavelmente poderoso ou ao ver um amigo sofrer um ataque muito violento, você rola 1d6, se o valor resultante for menor ou igual a 2, você entra em uma crise de stress pós-traumático. Você fica completamente paralisado tendo flashbacks até o final do combate, perdendo seus turnos, ou por cerca de 2 a 5 minutos se fora dele.</li>
+<li>2: Transtorno dissociativo: Você desassocia constantemente. Sempre que for fazer um teste jogue junto um outro dado (de preferência, de uma cor diferente), se esse outro dado cair no 1, você desassocia e se esquece completamente do que está fazendo, onde está e o que está acontecendo. Você retoma sua linha de raciocínio em cerca de 5 minutos. Em combates, role apenas uma vez, junto com a iniciativa.</li>
+<li>3: Insônia severa: Você não consegue mais descansar nem dormir direito, sempre que rolar um teste de descanso para recuperar vida, divida o valor pela metade. O mínimo a ser recuperado em testes desse tipo continua a ser 2.</li>
+<li>4: Fobia: Seja lá o que quase te matou, você adquiriu um medo severo e irracional. Sempre que se deparar com algo que remeta a causa do trauma, você deve tentar fugir a todo custo. Se estiver em combate, você obrigatoriamente deve tentar usar seu turno para fugir.</li>
+<li>5: Apego obsessivo: Você sobreviveu, e tem certeza que é porque alguém lhe salvou. Você se torna obcecado pela segurança dessa pessoa, sempre tentando salvá-la de situações de perigosas, mesmo se colocando em risco.</li>
+<li>6: Vício em adrenalina: Você gostou da adrenalina quase-morte. Foi uma experiência única, e quer retornar e esse estado mais vezes. Quando for realizar uma ação perigosa, sempre deve escolher a forma mais arriscada de realizá-la, procurando ativamente pelo perigo. Quando em combate, você sempre deve procurar o inimigo de aparência mais poderosa, e então se expor aos seus ataques, que serão feitos contra o personagem mesmo quando o teste de ataque do personagem não vier acompanhado de uma complicação.</li>
+</ul>
+<h3 class="atx" id="evoluindo">Evoluindo</h3>
+<p>Não existe, em VTNC, uma forma objetiva de contar a experiência dos jogadores para determinar quando eles upam de nível, sendo esse um evento determinado pelo GM de acordo com as missões realizadas ou marcos importantes/marcantes para a história.
+Ao subir de nível, os personagens:</p>
+<ul>
+<li>Ganham 1 ponto para colocarem em qualquer pool que desejarem;<ul>
+<li>Observe que o valor limite para uma pool é sempre 4. Se, após evoluir o personagem várias vezes, o jogador ficar com 4 em todas as pools, ele simplesmente para de receber esse benefício ao upar.</li>
+</ul>
+</li>
+<li>Ganham mais 3 pontos para distribuir entre vida e alma como desejarem;</li>
+<li>Podem aprender 1 novo ritual.</li>
+<li>Créditos para gastar em equipamentos na loja (cerca de 600).</li>
+</ul>
+</article>
+
+</div>
+
+
+</body>
+</html>

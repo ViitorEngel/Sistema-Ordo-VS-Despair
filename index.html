@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>VTNC</title>
+
+    <style>
+        @font-face {
+            font-family: 'Custom1';
+            src: url("Old Horror Films 1-0.ttf") format("truetype");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ---- CAMADA DE FUNDO 1 ---- */
+        #bg1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+
+            background-image: url("ILUSTRAÇÃO1.png");
+            background-size: 130%;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+
+            filter: blur(3px);
+            transform: scale(1.1);
+            transition: background-position 0.2s linear;
+        }
+
+        /* ---- CAMADA DE FUNDO 2 ---- */
+        #bg2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+
+            background-image: url("ILUSTRAÇÃO2.png"); /* pode ser a mesma */
+            background-size: 140%;                     /* mais zoom */
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+
+            filter: blur(3px) brightness(0.8);
+            transform: scale(1.15);
+            transition: background-position 0.2s linear;
+            opacity: 0.8;                              /* leve transparência */
+        }
+
+        body {
+            color: #eee;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: transparent;
+        }
+
+        h1 {
+            font-size: 60px;
+            font-family: 'Custom1';
+            color: #ffffff;
+            margin-bottom: 40px;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        nav a {
+            color: rgb(255, 255, 255);
+            font-family: 'Custom1';
+            font-size: 30px;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            font-size: 45px;
+            color: rgb(0, 0, 0);
+            background-color: #ffffff;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- CAMADAS DE FUNDO -->
+    <div id="bg1"></div>
+    <div id="bg2"></div>
+
+    <h1>VTNC: VAMPIROS, TRETAS NEFASTAS E CAPIROTAGENS!</h1>
+
+    <nav>
+        <a href="regras.html">REGRAS</a>
+        <a href="Submundo.html">O SUBMUNDO</a>
+        <a href="recursos.html">RECURSOS PARA MESTRES</a>
+        <a href="casos.html">CASOS</a>
+        <a href="agradecimentos.html">AGRADECIMENTOS E CRÉDITOS</a>
+    </nav>
+
+    <script>
+        document.addEventListener("mousemove", (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            const moveX1 = (x * 15) - 8;  /* movimento leve */
+            const moveY1 = (y * 15) - 8;
+
+            const moveX2 = (x * 25) - 12; /* movimento mais forte */
+            const moveY2 = (y * 25) - 12;
+
+            document.getElementById("bg1").style.backgroundPosition =
+                `${50 + moveX1}% ${50 + moveY1}%`;
+
+            document.getElementById("bg2").style.backgroundPosition =
+                `${50 + moveX2}% ${50 + moveY2}%`;
+        });
+    </script>
+
+</body>
+</html>
